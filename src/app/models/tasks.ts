@@ -1,15 +1,11 @@
-export interface Tasks {
-    _id:         string;
-    title:       string;
+export interface Task {
+    _id: string;
+    title: string;
     description: string;
-    dueDate:     Date;
-    priority:    string;
-    status:      string;
-    createdBy:   AssignedTo;
-    assignedTo:  AssignedTo;
-}
-
-export interface AssignedTo {
-    _id:      string;
-    username: string;
-}
+    dueDate: Date;
+    priority: 'low' | 'medium' | 'high' | 'urgent';
+    status: 'to start' | 'in progress' | 'completed';
+    createdBy: string; 
+    assignedTo: string; 
+    createdAt: Date;
+  }
