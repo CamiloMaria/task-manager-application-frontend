@@ -11,7 +11,7 @@ export class LoginService {
   endopoint = environment.apiUrl;
 
   constructor(protected http: HttpClient) { 
-    this.url = `${this.endopoint}/login `
+    this.url = `${this.endopoint}/users/login `
   }
 
   login(username: string, password: string): Observable<any> {
