@@ -6,17 +6,17 @@ import { UsersComponent } from './users/users.component';
 const routes: Routes = [
   { 
     path: 'tasks', 
-    component: TasksComponent,
+    component: TasksComponent
   },
   { 
     path: 'users', 
-    component: UsersComponent,
+    component: UsersComponent
   },
   { path: '', redirectTo:'tasks', pathMatch:'full'}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class componentRoutingModule { }
