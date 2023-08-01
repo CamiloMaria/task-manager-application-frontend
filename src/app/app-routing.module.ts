@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ComponentModule } from './components/component.module';
+import { ComponentComponent } from './components/component.component';
 import { LoginGuard } from './guard/login.guard';
   
 const routes: Routes = [
-  { path: 'components', component: ComponentModule, 
+  { path: 'components', component: ComponentComponent, 
     loadChildren: () => import('./components/component.module').then(m => m.ComponentModule),
     canActivate: [LoginGuard],
     canActivateChild: [LoginGuard]

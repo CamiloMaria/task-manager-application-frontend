@@ -17,8 +17,10 @@ export class LoginGuard {
     if (!token) {
       return this.router.createUrlTree(['/auth/login']);
     }
-
+    
     return true;
+
+
   }
 
   canActivateChild(

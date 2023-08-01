@@ -39,7 +39,7 @@ export class LoginComponent {
     ).subscribe(response => {
       if (response) {
         localStorage.setItem('token', response.token);
-        this.router.navigate(['/users']);      
+        this.router.navigate(['components']);      
       }
     });
   }
