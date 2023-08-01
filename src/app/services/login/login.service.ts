@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
+import { User } from 'src/app/models/users';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,7 @@ export class LoginService {
     this.url = `${this.endopoint}/users/login `
   }
 
-  login(username: string, password: string): Observable<any> {
-    return this.http.post<any>(this.url, { username, password });
+  login(username: string, password: string): Observable<User> {
+    return this.http.post<User>(this.url, { username, password });
   }
 }
