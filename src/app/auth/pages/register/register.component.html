@@ -3,12 +3,15 @@
       <div class="title"><span>Register Form</span></div>
       <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
         <div class="row">
+          <i class="bi bi-person"></i>
           <input type="text" placeholder="Username" formControlName="username" name="username" required>
         </div>
         <div class="row">
-            <input type="text" placeholder="Email" formControlName="email" name="email" required>
-          </div>
+          <i class="bi bi-envelope-at"></i>
+          <input type="text" placeholder="Email" formControlName="email" name="email" required>
+        </div>
         <div class="row">
+          <i class="bi bi-key"></i>
           <input type="password" placeholder="Password" formControlName="password" name="password" required>
         </div>
         <br>
