@@ -9,13 +9,13 @@ import { environment } from 'src/environments/environment.development';
 })
 export class RegisterService {
   url: string = '';
-  endopoint = environment.apiUrl;
+  endpoint = environment.apiUrl;
 
   constructor(protected http: HttpClient) { 
-    this.url = `${this.endopoint}/users/register `
+    this.url = `${this.endpoint}/users/register`
   }
 
-  register(username: string, email:string, password: string): Observable<User> {
+  register(username: string, email: string, password: string): Observable<User> {
     return this.http.post<User>(this.url, { username, email, password });
   }
 }
