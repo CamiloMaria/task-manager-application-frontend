@@ -33,13 +33,19 @@ export class LoginComponent {
     const { username, password } = this.loginForm.value;
     this.loginService.login(username, password).pipe(
       catchError(error => {
-        this.error = error.error;
+        if (error.error) {
+          this.error = error.error;
+          console.error('Backend Error:', error.error); // Log the error in the console
+        } else {
+          this.error = 'An unexpected error occurred. Please try again later.';
+          console.error('Unexpected Error:', error); // Log the unexpected error in the console
+        }
         return of(null);
       })
     ).subscribe(response => {
       if (response) {
         localStorage.setItem('token', response.token);
-        this.router.navigate(['components']);      
+        this.router.navigate(['']);      
       }
     });
   }
