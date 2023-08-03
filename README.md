@@ -1,131 +1,44 @@
-# TaskManagerApplication Backend - Administrador de Tareas
+# Before starting I want to tell you that there is another readme.md in spanish in case you are interested. Thank you
 
-Welcome to the TaskManagerApplication backend! Here I will explain what the task manager developed with Node.js and Express is all about. Get ready to efficiently and organizedly manage your tasks.
-
-## What is TaskManagerApplication?
-
-TaskManagerApplication is a powerful task management application that allows you to organize your work effectively. With this tool, you can assign tasks to yourself and other users, set due dates, priorities, and statuses, giving you complete control over your responsibilities.
+# TaskManagerApplication Frontend - Developed with Angular
+Welcome to the frontend of TaskManagerApplication! Here you will find an intuitive and attractive user experience thanks to the technologies and libraries that have been used. The goal is to provide you with an easy-to-use and visually pleasing task management application. Below, I present the details of our implementation in Angular.
 
 ## Technologies and Libraries Used
-To provide advanced functionalities and security in our backend, I have used the following libraries:
+I have leveraged various technologies and libraries to create a modern and user-friendly interface:
 
-- **Cors**: I used cors to enable Cross-Origin Resource Sharing (CORS) in our application. This allows the frontend to communicate with the backend without security restrictions.
-- **Bcrypt**: Bcrypt is implemented to securely store user passwords using hashing and salting techniques.
-- **Jsonwebtoken**: I integrated jsonwebtoken to generate and verify authentication tokens. This allows us to implement a secure token-based authentication system.
-- **Mongoose**: Mongoose is used as the MongoDB object modeling library. With mongoose, we can define schemas and models for our tasks and users, making it easier to interact with the database.
-- **Dotenv**: Dotenv is implemented to load environment variables from a .env file. This allows me to securely and easily configure sensitive variables, such as database credentials or the secret key for token signing.
-
-## Data Models
-
-The backend uses the MongoDB framework, Mongoose, to manage data in a structured manner. Here are the data models used to represent tasks in our application:
-
-### Task Model
-```javascript
-const mongoose = require('mongoose');
-
-const taskSchema = new mongoose.Schema({
-  title: {
-    type: String,
-    required: true,
-  },
-  description: {
-    type: String,
-    required: true,
-  },
-  dueDate: {
-    type: Date,
-    required: true,
-  },
-  priority: {
-    type: String,
-    enum: ['low', 'medium', 'high'],
-    default: 'medium',
-  },
-  status: {
-    type: String,
-    enum: ['to start', 'in progress', 'completed'],
-    default: 'to start',
-  },
-  createdBy: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
-    required: true,
-  },
-  assignedTo: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
-    required: true,
-  },
-  createdAt: {
-    type: Date,
-    default: Date.now,
-  },
-});
-
-const Task = mongoose.model('Task', taskSchema);
-
-module.exports = Task;
-
-```
-
-### User Model
-```javascript
-const mongoose = require('mongoose');
-
-const userSchema = new mongoose.Schema({
-    username: {
-        type: String,
-        required: true,
-        unique: true,
-    },
-    email: {
-        type: String,
-        required: true,
-        unique: true,
-    },
-    password: {
-        type: String,
-        required: true,
-    },
-    createdAt: {
-        type: Date,
-        default: Date.now,
-    },
-});
-
-const User = mongoose.model('User', userSchema);
-
-module.exports = User;
-```
+1. **Angular**: The frontend is developed with Angular, a powerful framework that allows us to create dynamic and robust web applications.
+2. **Bootstrap**: I used Bootstrap to achieve a responsive and elegant design. This helps the application adapt to different devices and screen sizes.
+3. **Angular Animations**: I implemented animations to enhance the user experience and make interaction with the application more enjoyable and smooth.
+4. **Font Awesome**: For icons, I incorporated Font Awesome, which offers a wide variety of icons to improve the aesthetics and usability of the application.
+5. **RxJS**: I used RxJS to work with asynchronous data streams and efficiently handle events.
+6. **ngx-toastr**: I implemented ngx-toastr to display notifications and messages in an elegant and non-intrusive way, improving communication with the user.
 
 ## Key Features
+### 1. Secure Login and Registration
+To ensure security and protect user privacy, I have implemented an authentication system based on tokens. When a user registers or logs in, they are provided with a token that is stored in the LocalStorage. This token is used to authenticate the user in each request, ensuring that only authorized users can access the application.
 
-### 1. Flexibility in Prioritization
-Not all tasks are equal; that's why TaskManagerApplication allows you to set priorities for your tasks. You can choose between 'low,' 'medium,' or 'high' to ensure that the most important tasks are addressed first.
+### 2. Auth Routing
+I have implemented an authentication routing system (routing guards) to restrict access to certain pages of the application to unauthenticated users. If a user tries to access a protected page without being logged in, they will be automatically redirected to the login page.
 
-### 2. Task Status
-With our task manager, you will never lose track of your progress. You can indicate if a task is 'to start,' 'in progress,' or 'completed.' Keep a clear and updated record of each task!
+### 3. Intuitive and Attractive Interface
+I have made efforts to design an intuitive and attractive user interface. The components and visual elements are carefully crafted to facilitate navigation and provide a pleasant user experience.
 
-### 3. Task Assignment
-Collaboration is essential in any project. With TaskManagerApplication, you can not only assign tasks to yourself but also assign tasks to other users of the application. Work together and achieve your goals as a team!
+### 4. Smooth Animations
+I have incorporated smooth animations to enrich the user interaction with the application. Animations are applied to page transitions, buttons, and other key elements to make the application usage more engaging.
 
-### 4. Due Dates
-No more worries about deadlines. In the application, you can define a due date for each task, helping you plan your work and keep everything in order.
+## Instructions for Use
+To use TaskManagerApplication frontend, follow these steps:
 
-## Installation Instructions
-To start using TaskManagerApplication, follow these simple steps:
-
-1. Make sure you have Node.js and MongoDB installed on your system.
+1. Make sure you have Node.js installed on your system.
 2. Clone this repository to your local machine.
-3. Navigate to the project folder and run npm install to install the dependencies.
-4. Ensure that your MongoDB server is up and running.
-5. Run npm start to start the server.
-6. Great! Now you can access the backend routes and start managing your tasks.
+3. Navigate to the project folder and install the dependencies by running npm install.
+4. Run ng serve to start the development server.
+5. Open your browser and visit http://localhost:4200 to see the application in action.
 
 ## Contribute
-TaskManagerApplication is an open-source project, and I welcome your contributions. If you find bugs, have ideas for improvements, or want to add new features, don't hesitate to send your Pull Requests.
+I would love to receive contributions from the community. If you encounter issues, have improvement ideas, or want to add new features, I will be thrilled to receive your Pull Requests!
 
 ## Support
-If you have any questions, issues, or just want to share your feedback, feel free to contact me.
+If you have questions, issues, or comments, do not hesitate to contact me through the GitHub repository.
 
-Thank you for choosing TaskManagerApplication to efficiently and productively manage your tasks! I hope you enjoy using the application as much as I enjoyed developing it.
+Thank you for choosing TaskManagerApplication frontend! I hope you enjoy using our application to manage your tasks efficiently and organized.
