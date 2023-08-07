@@ -1,6 +1,13 @@
 # Before starting I want to tell you that there is another readme.md in spanish in case you are interested. Thank you
 
 # TaskManagerApplication Frontend - Developed with Angular
+
+<p align="center">
+  <a href="https://angular.io/" target="blank"><img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Angular_full_color_logo.svg" width="200" alt="Nest Logo" /></a>
+</p>
+
+  <p align="center">Angular is a framework for web applications developed in <a href="https://www.typescriptlang.org/" target="_blank">TypeScript.</a></p>
+  
 Welcome to the frontend of TaskManagerApplication! Here you will find an intuitive and attractive user experience thanks to the technologies and libraries that have been used. The goal is to provide you with an easy-to-use and visually pleasing task management application. Below, I present the details of our implementation in Angular.
 
 ## Technologies and Libraries Used
