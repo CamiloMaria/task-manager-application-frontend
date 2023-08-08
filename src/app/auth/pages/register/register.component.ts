@@ -46,8 +46,6 @@ export class RegisterComponent {
   private errorHandler(errorConsole: HttpErrorResponse) {
     this.showError = errorConsole.error.error;
 
-    
-
     switch (errorConsole.status) {
       case 400:
         this.toastr.error(this.showError, 'Incorrect username');
